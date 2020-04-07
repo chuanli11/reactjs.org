@@ -48,27 +48,6 @@ files:
     translation: '/docs/%locale%/blog/%original_file_name%'
     languages_mapping: *anchor
   -
-    source: '/content/tutorial/*.md'
-    translation: '/docs/%locale%/tutorial/%original_file_name%'
-    languages_mapping: *anchor
-  -
-    source: '/content/community/*.md'
-    translation: '/docs/%locale%/community/%original_file_name%'
-    ignore:
-      - '/content/community/complementary-tools.it-IT.md'
-      - '/content/community/complementary-tools.ko-KR.md'
-      - '/content/community/complementary-tools.zh-CN.md'
-      - '/content/community/conferences.it-IT.md'
-      - '/content/community/conferences.ko-KR.md'
-      - '/content/community/conferences.zh-CN.md'
-      - '/content/community/examples.it-IT.md'
-      - '/content/community/examples.ko-KR.md'
-      - '/content/community/examples.zh-CN.md'
-      - '/content/community/videos.it-IT.md'
-      - '/content/community/videos.ko-KR.md'
-      - '/content/community/videos.zh-CN.md'
-    languages_mapping: *anchor
-  -
     source: '/content/contributing/*.md'
     translation: '/docs/%locale%/contributing/%original_file_name%'
     languages_mapping: *anchor
