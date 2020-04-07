@@ -57,27 +57,6 @@ module.exports = {
           },
           'gatsby-remark-external-links',
           'gatsby-remark-header-custom-ids',
-          {
-            resolve: 'gatsby-remark-code-repls',
-            options: {
-              defaultText: '<b>Try it on CodePen</b>',
-              directory: `${__dirname}/examples/`,
-              externals: [
-                `//unpkg.com/react/umd/react.development.js`,
-                `//unpkg.com/react-dom/umd/react-dom.development.js`,
-              ],
-              dependencies: [`react`, `react-dom`],
-              redirectTemplate: `${__dirname}/src/templates/codepen-example.js`,
-              target: '_blank',
-            },
-          },
-          {
-            resolve: 'gatsby-remark-embed-snippet',
-            options: {
-              classPrefix: 'gatsby-code-',
-              directory: `${__dirname}/examples/`,
-            },
-          },
           'gatsby-remark-use-jsx',
           {
             resolve: 'gatsby-remark-prismjs',
