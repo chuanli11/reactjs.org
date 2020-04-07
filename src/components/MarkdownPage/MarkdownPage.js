@@ -54,11 +54,13 @@ const MarkdownPage = ({
   sectionList,
   titlePostfix = '',
 }: Props) => {
+
+
   const hasAuthors = authors.length > 0;
   const titlePrefix = markdownRemark.frontmatter.title || '';
 
-  const prev = getPageById(sectionList, markdownRemark.frontmatter.prev);
-  const next = getPageById(sectionList, markdownRemark.frontmatter.next);
+  // const prev = getPageById(sectionList, markdownRemark.frontmatter.prev);
+  // const next = getPageById(sectionList, markdownRemark.frontmatter.next);
 
   return (
     <Flex
@@ -105,18 +107,9 @@ const MarkdownPage = ({
               <div css={sharedStyles.articleLayout.content}>
                 <div
                   css={[sharedStyles.markdown]}
-                  dangerouslySetInnerHTML={{__html: markdownRemark.html}}
+                  // CHUAN: This is where the article is injected.
+                  // dangerouslySetInnerHTML={{__html: markdownRemark.html}}
                 />
-
-                {markdownRemark.fields.path && (
-                  <div css={{marginTop: 80}}>
-                    <a
-                      css={sharedStyles.articleLayout.editLink}
-                      href={`https://github.com/reactjs/reactjs.org/tree/master/${markdownRemark.fields.path}`}>
-                      Edit this page
-                    </a>
-                  </div>
-                )}
               </div>
             </Flex>
 
@@ -136,9 +129,9 @@ const MarkdownPage = ({
         </Container>
       </div>
 
-      {(next || prev) && (
+      {/* {(next || prev) && (
         <NavigationFooter location={location} next={next} prev={prev} />
-      )}
+      )} */}
     </Flex>
   );
 };

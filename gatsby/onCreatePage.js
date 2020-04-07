@@ -15,6 +15,7 @@ module.exports = async ({page, actions}) => {
 
       createPage(page);
     }
+    console.log(page.path)
     resolvePromise();
   });
 };
