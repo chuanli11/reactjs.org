@@ -32,32 +32,6 @@ const createLinkBlog = ({
   );
 };
 
-const createLinkCommunity = ({
-  isActive,
-  item,
-  section,
-}: CreateLinkBaseProps): Node => {
-  if (item.href) {
-    return (
-      <a css={[linkCss]} href={item.href} target="_blank" rel="noopener">
-        {item.title}
-        <ExternalLinkSvg
-          cssProps={{
-            verticalAlign: -2,
-            display: 'inline-block',
-            marginLeft: 5,
-            color: colors.subtle,
-          }}
-        />
-      </a>
-    );
-  }
-  return createLinkDocs({
-    isActive,
-    item,
-    section,
-  });
-};
 
 const createLinkDocs = ({
   isActive,
@@ -68,27 +42,6 @@ const createLinkDocs = ({
     <Link
       css={[linkCss, isActive && activeLinkCss]}
       to={slugify(item.id, section.directory)}>
-      {isActive && <span css={activeLinkBefore} />}
-      {item.title}
-    </Link>
-  );
-};
-
-type CreateLinkTutorialProps = {
-  onLinkClick: Function,
-} & CreateLinkBaseProps;
-
-const createLinkTutorial = ({
-  isActive,
-  item,
-  onLinkClick,
-  section,
-}: CreateLinkTutorialProps): Node => {
-  return (
-    <Link
-      css={[linkCss, isActive && activeLinkCss]}
-      onClick={onLinkClick}
-      to={item.href}>
       {isActive && <span css={activeLinkBefore} />}
       {item.title}
     </Link>
@@ -127,7 +80,5 @@ const linkCss = {
 
 export {
   createLinkBlog,
-  createLinkCommunity,
   createLinkDocs,
-  createLinkTutorial,
 };

@@ -13,7 +13,7 @@ import MetaTitle from 'templates/components/MetaTitle';
 import SectionLinks from './SectionLinks';
 import React from 'react';
 import {colors, media} from 'theme';
-import {sectionListCommunity, sectionListDocs} from 'utils/sectionList';
+import {sectionListDocs} from 'utils/sectionList';
 
 // $FlowFixMe
 import navFooter from '../../../content/footerNav.yml';
@@ -82,20 +82,6 @@ const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
           <FooterNav layoutHasSidebar={layoutHasSidebar}>
             <MetaTitle onDark={true}>{navFooter.channels.title}</MetaTitle>
             <SectionLinks links={navFooter.channels.items} />
-          </FooterNav>
-          <FooterNav layoutHasSidebar={layoutHasSidebar}>
-            <MetaTitle onDark={true}>{navFooter.community.title}</MetaTitle>
-            <ExternalFooterLink
-              href={`https://github.com/facebook/react/blob/master/CODE_OF_CONDUCT.md`}>
-              Code of Conduct
-            </ExternalFooterLink>
-            {sectionListCommunity.map(section => (
-              <FooterLink
-                to={`/community/${section.items[0].id}.html`}
-                key={section.title}>
-                {section.title}
-              </FooterLink>
-            ))}
           </FooterNav>
           <FooterNav layoutHasSidebar={layoutHasSidebar}>
             <MetaTitle onDark={true}>{navFooter.more.title}</MetaTitle>
