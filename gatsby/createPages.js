@@ -40,6 +40,7 @@ module.exports = async ({graphql, actions}) => {
       }
     `,
   );
+    
 
   if (allMarkdown.errors) {
     console.error(allMarkdown.errors);

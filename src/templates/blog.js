@@ -27,6 +27,10 @@ const toSectionList = allMarkdownRemark => [
 
 const Blog = ({data, location}) => (
   <Layout location={location}>
+    { console.log( data.allMarkdownRemark ) }
+    { console.log( '-----------------------')}
+    { console.log( data.markdownRemark ) }
+    { console.log( 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')}
     <MarkdownPage
       authors={data.markdownRemark.frontmatter.author}
       createLink={createLinkBlog}

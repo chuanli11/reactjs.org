@@ -59,9 +59,8 @@ const MarkdownPage = ({
   const hasAuthors = authors.length > 0;
   const titlePrefix = markdownRemark.frontmatter.title || '';
 
-  // const prev = getPageById(sectionList, markdownRemark.frontmatter.prev);
-  // const next = getPageById(sectionList, markdownRemark.frontmatter.next);
-
+  { console.log(location) }
+  { console.log(sectionList) }
   return (
     <Flex
       direction="column"
@@ -83,9 +82,10 @@ const MarkdownPage = ({
         <Container>
           <div css={sharedStyles.articleLayout.container}>
             <Flex type="article" direction="column" grow="1" halign="stretch">
-              <MarkdownHeader title={titlePrefix} />
+             {/* CHUAN: This is where the tile is injected. */}
+              {/* <MarkdownHeader title={titlePrefix} /> */}
 
-              {(date || hasAuthors) && (
+              {/* {(date || hasAuthors) && (
                 <div css={{marginTop: 15}}>
                   {date}{' '}
                   {hasAuthors && (
@@ -102,7 +102,7 @@ const MarkdownPage = ({
                     </span>
                   )}
                 </div>
-              )}
+              )} */}
 
               <div css={sharedStyles.articleLayout.content}>
                 <div
@@ -128,10 +128,6 @@ const MarkdownPage = ({
           </div>
         </Container>
       </div>
-
-      {/* {(next || prev) && (
-        <NavigationFooter location={location} next={next} prev={prev} />
-      )} */}
     </Flex>
   );
 };
